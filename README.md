@@ -29,3 +29,12 @@
 1. `sudo shutdown -r 0` to reboot
 1. `curl -sfL https://get.k3s.io | sh -s - --write-kubeconfig-mode 644` to install k3s
 1. `kubectl get nodes` to verify it's running.
+
+## Configure Kubectl for Remote Access
+1. Install required version of kubectl from https://kubernetes.io/docs/tasks/tools/
+1. ssh into raspi
+1. `cat /etc/rancher/k3s/k3s.yaml`
+1. Copy contents into new file
+1. Save file as `${HOME}/.kube/config` on remote machine
+1. Edit the server address and context name as needed. 
+1. `kubectl config get-contexts` to confirm context is present/correct.
